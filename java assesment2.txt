@@ -1,0 +1,143 @@
+import java.util.*;
+
+ class UserMainCode{
+    static int calculateElectricityBill(String input1, String input2, int input3) {
+    int n1 = Integer.parseInt(input1.substring(5, input1.length()));
+    int n2 = Integer.parseInt(input2.substring(5, input2.length()));
+    int n = Math.abs((n2 - n1) * input3);
+    return n;
+  }
+public class Main{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String s1 = sc.nextLine();
+    String s2 = sc.nextLine();
+    int n = sc.nextInt();
+    int n1 = calculateElectricityBill(s1, s2, n);
+    System.out.println(n1);
+  }
+}
+
+
+Question 2)
+
+package com.org.gen.Assignment;
+import java.util.*;
+public class ColourCode {
+	  public static boolean ValidateColourCode(String s1) {
+	        boolean b = false, b1 = false;
+	        String s2 = s1.substring(1, s1.length());
+	        if (s1.length() == 7)
+	            if (s1.charAt(0) == '#')
+	            b1 = true;
+	        if (b1 == true)
+	            for (int i = 0; i < s2.length(); i++) {
+	            char c = s2.charAt(i);
+	            if (c != '#') {
+	                if (s2.matches("[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}"))
+	                    b = true;
+	                else {
+	                    b = false;
+	                    break;
+	                }
+	            }
+	        }
+	        return b;
+	  }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  Scanner s = new Scanner(System.in);
+	        String s1 = s.next();
+	        boolean b = ValidateColourCode(s1);
+	        if (b == true)
+	        {
+	            System.out.println("Valid");
+	        }
+	        else
+	        {
+	            System.out.println("Invalid");
+	        }
+	        s.close();
+	}
+
+}
+
+
+Question 3)
+
+import java.util.Scanner;
+
+
+
+public class UserMaincode {
+	static int calculatenCr(int n, int r) {
+		return fact(n)/(fact(r)*fact(n-r)) ;
+		
+	}
+	static int fact(int n) {
+		int re = 1;
+		for(int i=2;i<=n;i++)
+			re = re*i;
+		return re;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int r = sc.nextInt();System.out.println(calculatenCr(n,r));
+		
+      
+	}
+
+}
+
+question4)
+
+package com.org.gen.Assignment;
+import java.util.*;
+public class Password {
+    static int ValidatePassword(String a)
+    {
+    	  if (a.length() >= 8) {
+    	      if (a.contains("#") || a.contains("@") || a.contains("_")) {
+    	        char c = a.charAt(0);
+    	        //System.out.println(c);
+    	        if (Character.isAlphabetic(c)) {
+    	          char dd = a.charAt(a.length() - 1);
+    	          
+    	          if ((Character.isAlphabetic(dd)) || (Character.isDigit(dd)))
+
+    	          {
+    	            if (a.matches(".[0-9]{1,}.")
+    	                || a.matches(".[a-zA-Z]{1,}.")) {
+
+    	             return 1;
+
+    	            } else{
+    	            	 return -1;
+    	            }
+    	          } else{
+    	        	  return -1;
+    	          }
+    	        }
+    	         else{
+    	            return -1;
+    	          }
+    	      } else{
+    	    	  return -1;
+    	      }
+
+    	    } else{
+    	    	return -1;
+    	    }
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Scanner sc = new Scanner(System.in);
+		    String s = sc.next();
+		   int r= ValidatePassword(s);
+		   System.out.println(r);
+		   sc.close();
+	}
+
+}
